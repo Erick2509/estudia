@@ -13,3 +13,6 @@ La configuración web pública de Firebase está en `firebase-config.js`; nunca 
 
 ## Diseño renovado
 Se agregó ui.js (interacciones visuales, filtro de tareas, barra de avance y menú móvil), y se renovaron index.html y styles.css. Se conservan app.js, firebase-config.js y firestore.rules para mantener las cuentas y datos existentes. Para desplegar en Vercel, sube todos los archivos, incluido ui.js. Prueba Google, correo, tareas y progreso en el dominio publicado.
+
+## Nueva pantalla de acceso
+Se oculta la navegación mientras no hay sesión; registro e inicio de sesión tienen vistas, textos y transiciones diferenciados. `auth-ui.js` controla únicamente la presentación; `app.js` mantiene Firebase y el guardado de datos.
