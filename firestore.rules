@@ -1,0 +1,31 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /usuarios/{userId}/tareas/{taskId} {
+      allow read, delete: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId
+        && request.resource.data.keys().hasOnly(['titulo','fecha','tipo','completada','creada'])
+        && request.resource.data.titulo is string && request.resource.data.titulo.size() > 0 && request.resource.data.titulo.size() <= 120
+        && request.resource.data.fecha is string && request.resource.data.fecha.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        && request.resource.data.tipo in ['Tarea','Lectura','Trabajo grupal','Examen','Exposición']
+        && request.resource.data.completada == false && request.resource.data.creada == request.time;
+      allow update: if request.auth != null && request.auth.uid == userId
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['completada'])
+        && request.resource.data.completada is bool;
+    }
+    match /usuarios/{userId}/practicas/{practiceId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId
+        && request.resource.data.keys().hasOnly(['tecnica','fecha'])
+        && request.resource.data.tecnica in ['mapas','cornell','espaciada','flashcards','pomodoro','activo']
+        && request.resource.data.fecha == request.time;
+    }
+    match /usuarios/{userId}/datos/perfil {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create, update: if request.auth != null && request.auth.uid == userId
+        && request.resource.data.keys().hasOnly(['animo','actualizado'])
+        && request.resource.data.animo in ['Muy bien','Bien','Regular','Preocupado/a','Muy estresado/a']
+        && request.resource.data.actualizado == request.time;
+    }
+  }
+}
