@@ -25,3 +25,7 @@ Se oculta la navegación mientras no hay sesión; registro e inicio de sesión t
 - Autenticación y rutas de Firestore conservadas; no borres la base de datos ni cambies las reglas sin revisarlas.
 - Archivos nuevos: experience.js. Publica todos los archivos juntos en Vercel.
 - Comprueba el flujo de Google, tareas, prácticas, ánimo y cierre de sesión antes de sustituir el despliegue actual.
+
+
+## Edición interactiva
+Incluye `enhancements.js`: temas claro/oscuro, calendario de tareas existentes, logros basados en datos reales, modo de concentración, avatar y nombre personalizables. El perfil se guarda mediante merge en `usuarios/{uid}/datos/perfil`, sin sobrescribir el estado de ánimo. Los avatares son emojis; no se suben fotografías ni se requiere Firebase Storage. No elimina datos existentes ni cambia las rutas de Firestore. Las celebraciones se muestran al alcanzar un logro durante la sesión; no son un historial persistente. El temporizador sigue funcionando mientras la pestaña esté abierta. Publica todos los archivos de esta carpeta juntos.
