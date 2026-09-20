@@ -16,3 +16,12 @@ Se agregó ui.js (interacciones visuales, filtro de tareas, barra de avance y me
 
 ## Nueva pantalla de acceso
 Se oculta la navegación mientras no hay sesión; registro e inicio de sesión tienen vistas, textos y transiciones diferenciados. `auth-ui.js` controla únicamente la presentación; `app.js` mantiene Firebase y el guardado de datos.
+
+
+## Versión 3: experiencia renovada
+- Inicio convertido en panel personal con contadores calculados de tareas y prácticas existentes.
+- Secciones independientes con transición, barra inferior móvil y menú Más.
+- Respiración guiada con animación opcional, respetando movimiento reducido.
+- Autenticación y rutas de Firestore conservadas; no borres la base de datos ni cambies las reglas sin revisarlas.
+- Archivos nuevos: experience.js. Publica todos los archivos juntos en Vercel.
+- Comprueba el flujo de Google, tareas, prácticas, ánimo y cierre de sesión antes de sustituir el despliegue actual.
