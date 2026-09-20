@@ -1,13 +1,11 @@
 # ESTUDIA+ — instalación
 
-Proyecto en HTML, CSS, Bootstrap 5, JavaScript modular y Firebase Authentication + Cloud Firestore.
+Sitio con HTML, CSS, Bootstrap 5, JavaScript y Firebase. Incluye siete secciones, registro con correo y contraseña, acceso Google, recuperación de contraseña y progreso individual en Firestore. No hay modo invitado.
 
-1. Crea un proyecto en https://console.firebase.google.com/ y registra una aplicación **Web**. Copia la configuración que te proporciona Firebase en `firebase-config.js` (sustituye los valores REEMPLAZAR).
-2. En Firebase Console > Authentication > Sign-in method, habilita **Anónimo**.
-3. En Firestore Database crea la base de datos (elige una región adecuada). En **Reglas**, sustituye el contenido por `firestore.rules` y pulsa **Publicar**. No dejes las reglas de modo de prueba.
-4. Sirve la carpeta desde un servidor local; no abras `index.html` con `file://`. Con VS Code utiliza Live Server, o desde esta carpeta ejecuta `python -m http.server 5500` y visita http://localhost:5500.
-5. Para publicar, sube los archivos a Firebase Hosting o a un hosting HTTPS compatible. Si Firebase Auth solicita dominios autorizados, agrega el dominio donde publicaste la web en Authentication > Settings > Authorized domains.
+1. Abre esta carpeta en Visual Studio Code y usa **Live Server** sobre `index.html` (por ejemplo, `http://127.0.0.1:5500`). No abras con `file://`.
+2. En Firebase Console, proyecto **estudia-3bf91**, Authentication > Método de acceso: habilita **Google** y **Correo electrónico/contraseña**.
+3. Authentication > Configuración > Dominios autorizados: autoriza el host de tu servidor local (`localhost` o `127.0.0.1` si Firebase permite agregarlo) y el dominio de producción. Si un dominio local no es admitido, usa uno autorizado o Firebase Hosting.
+4. Firestore Database > Reglas: pega el contenido de `firestore.rules` y presiona **Publicar**. Estas reglas permiten solo datos propios y validan los registros que escribe la aplicación.
+5. Recarga la web, crea una cuenta y agrega una tarea. Comprueba en Authentication > Usuarios y en Firestore > usuarios > UID > tareas.
 
-**Importante:** La sesión es anónima y está vinculada a la instalación del navegador: si se borran los datos del sitio, se cambia de dispositivo o se pierde la sesión, el usuario puede perder acceso a sus registros. Para sincronizar entre dispositivos, agrega autenticación con Google/correo y vinculación de cuentas antes de usar en producción. No coloques claves privadas de servicio en el frontend. Los datos de estado de ánimo son personales; muestra una política de privacidad y solicita consentimiento antes de publicar para terceros.
-
-**Alcance:** Se guardan tareas, prácticas y último estado de ánimo en Firestore; el progreso se calcula a partir de esos registros. El temporizador y la respiración son temporales y no guardan sesiones automáticamente. La interfaz es adaptable a móviles. No incluye notificaciones, PWA ni cuentas permanentes.
+La configuración web pública de Firebase está en `firebase-config.js`; nunca pongas claves privadas de servicio en el navegador. El estado de ánimo es información personal: prepara aviso de privacidad y medidas apropiadas si se usa con menores. La autenticación no requiere crear manualmente colecciones. El temporizador y la respiración no se guardan automáticamente.

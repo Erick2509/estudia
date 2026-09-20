@@ -1,9 +1,9 @@
-// Reemplaza estos valores por los de Firebase Console > Configuración del proyecto > Tus apps > Web.
+// Configuración pública de la aplicación web Firebase (no es una clave de servicio).
 export const firebaseConfig = {
-  apiKey: "REEMPLAZAR_API_KEY",
-  authDomain: "REEMPLAZAR_PROJECT_ID.firebaseapp.com",
-  projectId: "REEMPLAZAR_PROJECT_ID",
-  storageBucket: "REEMPLAZAR_PROJECT_ID.firebasestorage.app",
-  messagingSenderId: "REEMPLAZAR_SENDER_ID",
-  appId: "REEMPLAZAR_APP_ID"
+  apiKey: 'AIzaSyBd0wZfrueL7SlczAPoMQXy7QPbyCLyW-U',
+  authDomain: 'estudia-3bf91.firebaseapp.com',
+  projectId: 'estudia-3bf91',
+  storageBucket: 'estudia-3bf91.firebasestorage.app',
+  messagingSenderId: '407482187617',
+  appId: '1:407482187617:web:9df72be5e56e3fce47cf20'
 };
