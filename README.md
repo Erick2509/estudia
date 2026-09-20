@@ -29,3 +29,9 @@ Se oculta la navegación mientras no hay sesión; registro e inicio de sesión t
 
 ## Edición interactiva
 Incluye `enhancements.js`: temas claro/oscuro, calendario de tareas existentes, logros basados en datos reales, modo de concentración, avatar y nombre personalizables. El perfil se guarda mediante merge en `usuarios/{uid}/datos/perfil`, sin sobrescribir el estado de ánimo. Los avatares son emojis; no se suben fotografías ni se requiere Firebase Storage. No elimina datos existentes ni cambia las rutas de Firestore. Las celebraciones se muestran al alcanzar un logro durante la sesión; no son un historial persistente. El temporizador sigue funcionando mientras la pestaña esté abierta. Publica todos los archivos de esta carpeta juntos.
+
+
+## Instalación PWA (nueva versión)
+Publica todos los archivos de esta carpeta en la raíz de esstudia.vercel.app, incluidas las carpetas `icons` y el archivo de verificación de Search Console. El botón flotante abre el diálogo nativo de instalación cuando el navegador expone `beforeinstallprompt`. En iOS muestra una ventana con instrucciones de Safari; iOS no permite instalar directamente mediante JavaScript. El botón se oculta en modo standalone.
+
+El service worker solo guarda iconos, manifest y una pantalla informativa sin conexión. La autenticación y Firestore siguen requiriendo internet; no se guardan respuestas privadas en caché. Google Sign-in mediante ventana emergente puede variar en navegadores y PWAs instaladas: comprueba el acceso en Android, iOS y escritorio antes de reemplazar la versión publicada.

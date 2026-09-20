@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "ESTUDIA+ — Más organización, menos estrés",
+  "short_name": "ESTUDIA+",
+  "description": "Organiza tus tareas, estudia con Pomodoro y consulta tu progreso.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f8fe",
+  "theme_color": "#635bda",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
