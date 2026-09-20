@@ -9,3 +9,7 @@ Sitio con HTML, CSS, Bootstrap 5, JavaScript y Firebase. Incluye siete secciones
 5. Recarga la web, crea una cuenta y agrega una tarea. Comprueba en Authentication > Usuarios y en Firestore > usuarios > UID > tareas.
 
 La configuración web pública de Firebase está en `firebase-config.js`; nunca pongas claves privadas de servicio en el navegador. El estado de ánimo es información personal: prepara aviso de privacidad y medidas apropiadas si se usa con menores. La autenticación no requiere crear manualmente colecciones. El temporizador y la respiración no se guardan automáticamente.
+
+
+## Diseño renovado
+Se agregó ui.js (interacciones visuales, filtro de tareas, barra de avance y menú móvil), y se renovaron index.html y styles.css. Se conservan app.js, firebase-config.js y firestore.rules para mantener las cuentas y datos existentes. Para desplegar en Vercel, sube todos los archivos, incluido ui.js. Prueba Google, correo, tareas y progreso en el dominio publicado.
